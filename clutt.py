@@ -85,11 +85,11 @@ def start_ddos(prox, url, headers, proxies, color):
 @click.option('--url', '-u', help="URL")
 def main(proxy, url):
     clear()
-	if url == None:
-		url = input("URL: ")
-	if url[:4] != "http":
-		print(Fore.RED+"Enter the full URL (example: http*://****.**/)"+Style.RESET_ALL)
-		exit()
+	    if url == None:
+	    	url = input("URL: ")
+      	if url[:4] != "http":
+	    	print(Fore.RED+"Enter the full URL (example: http*://****.**/)"+Style.RESET_ALL)
+		    exit()
 	if proxy == None:
 		while True:
 			req = r.get("https://api.proxyscrape.com/?request=displayproxies")
