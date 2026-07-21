@@ -83,9 +83,10 @@ def start_ddos(prox, url, headers, proxies, color):
 		s = r.Session()
 		req = s.get(url, headers=headers, proxies=proxies)
 		if req.status_code == 200:
-			print(color+ "disturb-proxy:  {}".format(prox))
-			print("\033[104m\033[37m\033[3mThread :>\033[0m  \033[38;5;220m{active_count}\033[0m")
-			
+			print("\033[94m┌{'─' * 14}┐┌{'─' * 8}┐")
+			print(color+ "│\033[33m disturb-proxy: ││ {} │".format(prox))
+			print("\033[38;5;220m│ {url} │\033[0m")
+			print("\033[94m└{'─' * 14}┘└{'─' * 8}┘ ")
 	except:
 		pass
 
