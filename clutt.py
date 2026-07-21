@@ -86,7 +86,7 @@ def start_ddos(prox, url, headers, proxies, color):
 @click.option('--proxy', '-p', help="File with a proxy")
 @click.option('--url', '-u', help="URL")
 def main(proxy, url):
-	clear()
+	
 	if url == None:
 		url = input("URL: ")
 	if url[:4] != "http":
