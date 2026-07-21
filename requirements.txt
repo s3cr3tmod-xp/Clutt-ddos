@@ -1,3 +1,5 @@
+requests
 fake_headers
 colorama
 fade
+click
