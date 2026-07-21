@@ -7,6 +7,7 @@ import random
 import click
 from threading import Thread
 import requests
+from colorama import Fore, Style, Back
 from fake_headers import Headers
 import time
 import fade
