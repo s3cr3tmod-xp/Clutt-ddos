@@ -76,7 +76,7 @@ def start_ddos(prox, url, headers, proxies, color):
 		s = r.Session()
 		req = s.get(url, headers=headers, proxies=proxies)
 		if req.status_code == 200:
-		   print(color+"{}_proxy ".format(prox))
+		   print(color+"| get {-u} | {}_proxy ".format(prox))
 	except:
 		pass
 
@@ -102,7 +102,7 @@ def main(proxy, url):
 		try:
 			fx = open(proxy)
 			array = fx.read().split()
-			print("\033[92m" +str(url)+ "\033[33mBASETL-COMUNITY \033[0m")
+			print(Back.YELLOW+Fore.GREEN+"{} new proxies".format(len(array))+Style.RESET_ALL)
 			check_prox(array, url)
 			print("Found {} proxies in {}.\nChecking proxies...".format(len(array), proxy))
 			check_prox(array, url)
